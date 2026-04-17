@@ -1,3 +1,5 @@
+const url = "https://striveschool-api.herokuapp.com/api/product/";
+
 class Product {
   constructor(_name, _description, _imageUrl, _price, _brand) {
     this.name = _name;
@@ -26,7 +28,7 @@ form.addEventListener("submit", function (e) {
   const singleProduct = new Product(name, description, imageUrl, price, brand);
 
   //   esecuzione POST
-  fetch("https://striveschool-api.herokuapp.com/api/product/", {
+  fetch(url, {
     method: "POST",
     body: JSON.stringify(singleProduct),
     headers: {
