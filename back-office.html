@@ -70,7 +70,7 @@
                   type="text"
                   class="form-control"
                   id="name"
-                  placeholder="T-Shirt"
+                  placeholder="Gryffindor T-Shirt"
                   required
                 />
               </div>
@@ -83,7 +83,7 @@
                   type="text"
                   class="form-control"
                   id="description"
-                  placeholder="Gryffindor winter t-shirt"
+                  placeholder="Black T-Shirt"
                   required
                 />
               </div>
@@ -133,20 +133,22 @@
                   Add <i class="bi bi-plus-circle-fill"></i>
                 </button>
                 <button
-                  type="submit"
+                  type="button"
                   class="btn btn-warning fw-bold text-white"
+                  onclick="putProduct()"
                   disabled
                 >
                   Edit <i class="bi bi-pen"></i>
                 </button>
-                <button type="submit" class="btn btn-danger fw-bold" disabled>
-                  Delete <i class="bi bi-trash"></i>
-                </button>
                 <button
                   type="button"
-                  class="btn btn-primary fw-bold"
-                  onclick="resetForm()"
+                  class="btn btn-danger fw-bold"
+                  onclick="deleteProduct()"
+                  disabled
                 >
+                  Delete <i class="bi bi-trash"></i>
+                </button>
+                <button type="button" class="btn btn-primary fw-bold">
                   Reset <i class="bi bi-x-circle"></i>
                 </button>
               </div>
@@ -195,6 +197,7 @@
           </div>
         </div>
       </div>
+      <!-- #endregion -->
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

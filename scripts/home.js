@@ -6,6 +6,11 @@ const handleButtonNav = function () {
   newModal.show();
 };
 
+const articles = document.querySelectorAll("article");
+articles.forEach((art) => {
+  art.style.display = "none";
+});
+
 const getProducts = function () {
   fetch(url, {
     headers: {
@@ -22,6 +27,13 @@ const getProducts = function () {
     })
     .then((data) => {
       console.log(data);
+      const spinner = document.getElementById("spinner");
+      spinner.remove();
+
+      articles.forEach((art) => {
+        art.style.display = "block";
+      });
+
       data.forEach((product) => {
         let rowName = null;
 
@@ -42,14 +54,14 @@ const getProducts = function () {
           <div class="col-12 col-md-6 col-lg-3 mb-4">
             <div class="card h-100 shadow-sm"> 
               <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}" 
-                   style="height: 200px; object-fit: contain; background-color: #f8f9fa;">
+                   style="height: 200px; object-fit: contain;">
               <div class="card-body d-flex flex-column"> 
                 <h5 class="card-title text-truncate">${product.name}</h5>
                 <p class="card-text flex-grow-1 text-secondary small">${product.description}</p>
                 <p class="fw-bold mb-3">${product.price}€</p>
-                <div class="d-flex gap-2">
-                  <a href="./details.html?id=${product._id}" class="btn btn-warning btn-sm flex-fill">Details</a>
-                  <a href="./backoffice.html?id=${product._id}" class="btn btn-outline-dark btn-sm flex-fill">Edit</a>
+                <div class="d-flex justify-content-between gap-2">
+                  <a href="./details.html?id=${product._id}" class="btn btn-outline-dark btn-sm">Details</a>
+                  <a href="./back-office.html?id=${product._id}" class="btn btn-outline-dark btn-sm">Edit</a>
                 </div>
               </div>
             </div>
