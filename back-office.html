@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="h-100 d-flex flex-column">
+    <header>
+      <!-- #region NAVBAR -->
+      <nav
+        class="navbar navbar-expand-md bg-body-tertiary"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./home.html"
+            >Harry Potter Shop <i class="bi bi-magic"></i
+          ></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./back-office.html"
+                  >Back Office</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- #endregion -->
+    </header>
+    <main style="background-color: rgba(33, 37, 41)" class="flex-grow-1">
+      <div class="container">
+        <div class="row justify-content-center text-white">
+          <div class="col-10 col-md-6 mt-4">
+            <form>
+              <!-- #region FORM IMPUT -->
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="T-Shirt"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="description" class="form-label fw-bold"
+                  >Description</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  placeholder="Gryffindor winter t-shirt"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="imageUrl" class="form-label fw-bold"
+                  >Image Url</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="imageUrl"
+                  placeholder="https://example.com"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="price" class="form-label fw-bold">Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  placeholder="100"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="text" class="form-label fw-bold">Brand</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="brand"
+                  placeholder="Gryffindor"
+                  required
+                />
+              </div>
+
+              <!-- #endregion -->
+
+              <!-- #region FORM BUTTON -->
+              <div
+                class="d-flex flex-column gap-2 flex-lg-row justify-content-between mt-4 text-white"
+              >
+                <button type="submit" class="btn btn-success fw-bold">
+                  Add <i class="bi bi-plus-circle-fill"></i>
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-warning fw-bold text-white"
+                  disabled
+                >
+                  Edit <i class="bi bi-pen"></i>
+                </button>
+                <button type="submit" class="btn btn-danger fw-bold" disabled>
+                  Delete <i class="bi bi-trash"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary fw-bold"
+                  onclick="resetForm()"
+                >
+                  Reset <i class="bi bi-x-circle"></i>
+                </button>
+              </div>
+              <!-- #endregion -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/back-office.js"></script>
+  </body>
+</html>
